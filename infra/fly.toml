@@ -1,0 +1,21 @@
+# Placeholder — no Fly app has been provisioned yet.
+#
+# OPEN QUESTION (docs/SRS.md §18 #1): Apache AGE is a compiled Postgres extension.
+# Verify whether Fly's managed Postgres supports installing it, or whether we need
+# a custom Postgres image, BEFORE Stage 0 ends.
+
+app = "granvaya"
+primary_region = "bom" # Mumbai — SRS.md §15 data residency: Indian region where supported
+
+[build]
+  dockerfile = "infra/Dockerfile.web"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+[env]
+  PORT = "3000"

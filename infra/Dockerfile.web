@@ -1,0 +1,12 @@
+# Build stub for apps/web (Next.js). Not tuned — revisit multi-stage layer caching
+# once the app has real dependencies and a build worth optimizing.
+FROM node:20-slim AS base
+WORKDIR /app
+RUN corepack enable
+
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter @granvaya/web build
+
+EXPOSE 3000
+CMD ["pnpm", "--filter", "@granvaya/web", "start"]

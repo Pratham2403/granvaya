@@ -1,0 +1,28 @@
+# Node
+node_modules/
+dist/
+.next/
+.turbo/
+*.tsbuildinfo
+.env
+.env.local
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Misc
+.DS_Store
+*.log
+
+# Documentation
+docs/
+local/
+scratch/
+scripts/
+
+# AI
+.claude/
+.cursor/

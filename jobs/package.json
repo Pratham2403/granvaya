@@ -1,0 +1,27 @@
+{
+  "name": "@granvaya/jobs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo \"no lint configured yet\"",
+    "test": "echo \"no tests yet\""
+  },
+  "dependencies": {
+    "@granvaya/config": "workspace:*",
+    "@granvaya/core": "workspace:*",
+    "@granvaya/db": "workspace:*",
+    "@granvaya/graph": "workspace:*",
+    "@granvaya/llm": "workspace:*",
+    "pg-boss": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

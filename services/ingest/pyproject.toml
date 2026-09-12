@@ -1,0 +1,23 @@
+[project]
+name = "ingest"
+version = "0.0.0"
+description = "Content ingestion pipeline — fetch, extract, canonicalize, write to graph (SRS.md §11)"
+requires-python = ">=3.11"
+dependencies = [
+    # httpx        — source fetching
+    # pydantic     — structured extraction schemas
+    # psycopg      — Postgres + Apache AGE + pgvector writes
+    # Left unpinned until Stage 4 (SRS.md §16) wires real ingestion.
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ingest"]

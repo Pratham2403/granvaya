@@ -1,0 +1,10 @@
+# Build stub for the pg-boss job workers.
+FROM node:20-slim AS base
+WORKDIR /app
+RUN corepack enable
+
+COPY . .
+RUN pnpm install --frozen-lockfile
+RUN pnpm --filter @granvaya/jobs build
+
+CMD ["pnpm", "--filter", "@granvaya/jobs", "start"]
